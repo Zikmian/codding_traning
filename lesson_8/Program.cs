@@ -240,13 +240,14 @@ void Ex4()
 int[,] CreateSpiralArr(int len)
 {
     int[,] result = new int[len,len];
+    int endpoint = len*len;
     len--; // длина текущего колена спирали
     int cursor = 0; //Счетчик, который записывается в позициию в спирали
     int i = 0;
     int j = 0;
     int cornerCounter = 1; //Указатель поворотов 1 - верхнее ребро спирали, 2 - правое ребро спирали, 3 - нижнее, 4 - левое
     int loolCounter = 0; //Указатель завершения петли, если мы заполнили 3 ребра, то указатель должен поменяться 
-    while(cursor < ((len+1)*(len+1))) //Условие по колличеству элементов, закончит, как достигнем потолка счетчика
+    while(cursor < endpoint) //Условие по колличеству элементов, закончит, как достигнем потолка счетчика
     {
         Console.WriteLine($"i= {i}, j= {j}, lc= {loolCounter}, cc= {cornerCounter}, c= {cursor}");//Для целей отладки
         result[i,j] = cursor;
@@ -260,16 +261,14 @@ int[,] CreateSpiralArr(int len)
                 else
                     {
                         cornerCounter = 2;
-                        goto case 2;
                     }
                 break;
             case 2:
-                if (j < len - loolCounter) 
+                if (j < len - loolCounter)
                     j++; //Движемся вниз
                 else
                     {
                         cornerCounter = 3;
-                        goto case 3;
                     }
                 break;
             case 3:
@@ -278,21 +277,21 @@ int[,] CreateSpiralArr(int len)
                 else
                 {
                     loolCounter++;
+                    len--;
                     cornerCounter = 4;
-                    goto case 4;
-                }
+                    Console.WriteLine("Switch to 4");
+                }                
                 break;
             case 4:
                 if (j > loolCounter)
+                {
                     j--; //Движемся вверх до границы пройденного 
+                }
                 else
                     {
                         cornerCounter = 1;
-                        len--;
+                        Console.WriteLine("Switch to 1");
                     }
-                break;
-            default:
-                Console.WriteLine(cornerCounter);
                 break;
         }
     }

@@ -66,9 +66,6 @@ Console.WriteLine(GetDistance(first,second));
 5 -> 1, 8, 27, 64, 125
 */
 
-string input_a;
-int a, i;
-
 input_a = Console.ReadLine();
 a = int.Parse(input_a);
 

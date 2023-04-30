@@ -32,8 +32,9 @@ int SearchEven(int[] input_arr)
     }
     return count;
 }
-arr = CreateRandArr(len,100,1000);
+
 len = int.Parse(Console.ReadLine());
+arr = CreateRandArr(len,100,1000);
 ReturnArr(arr);
 Console.WriteLine(SearchEven(arr));
 
@@ -77,8 +78,8 @@ int FindMax(int[] arr)
     for (int i = 1; i < arr.Length; i++) if (arr[i] > max) max = arr[i];
     return max;
 }
-int min = -1;
-int max = min;
+min = -1;
+max = min;
 len = int.Parse(Console.ReadLine());
 while (min < 0)
 {
@@ -92,6 +93,6 @@ while (max <= min)
     max = int.Parse(Console.ReadLine());
     if (max <= min) Console.WriteLine("Wrong, try again");
 }
-int[] input = CreateRandArr(len, min, max);
+input  = CreateRandArr(len, min, max);
 ReturnArr(input);
 Console.WriteLine(FindMax(input) - FindMin(input));
