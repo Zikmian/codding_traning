@@ -261,6 +261,7 @@ int[,] CreateSpiralArr(int len)
                 else
                     {
                         cornerCounter = 2;
+                        j++;
                     }
                 break;
             case 2:
@@ -269,6 +270,7 @@ int[,] CreateSpiralArr(int len)
                 else
                     {
                         cornerCounter = 3;
+                        i--;
                     }
                 break;
             case 3:
@@ -278,6 +280,7 @@ int[,] CreateSpiralArr(int len)
                 {
                     loolCounter++;
                     cornerCounter = 4;
+                    j--;
                     Console.WriteLine("Switch to 4");
                 }                
                 break;
@@ -289,6 +292,7 @@ int[,] CreateSpiralArr(int len)
                 else
                     {
                         cornerCounter = 1;
+                        i++;
                         Console.WriteLine("Switch to 1");
                     }
                 break;
