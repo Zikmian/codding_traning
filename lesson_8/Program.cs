@@ -277,7 +277,6 @@ int[,] CreateSpiralArr(int len)
                 else
                 {
                     loolCounter++;
-                    len--;
                     cornerCounter = 4;
                     Console.WriteLine("Switch to 4");
                 }                
